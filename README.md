@@ -1,0 +1,1 @@
+# Barcode-Scanner-and-Card-Logging-for-inventory-management
