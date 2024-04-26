@@ -11,7 +11,7 @@ This project involves using a Bluetooth barcode scanner and an NFC card reader. 
 |Yuying Wang|  44952532
 **** 
 ## Table of contents
-* [Task List](#TaskList)
+* [Task List](#Task List)
 * KPIs
 * Intruction
 * Folder tree
