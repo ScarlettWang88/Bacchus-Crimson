@@ -6,9 +6,9 @@ This project involves using a Bluetooth barcode scanner and an NFC card reader. 
 
 |Member|Student Number|
 |---|---
-|Junyi Zhang|46273473
-|Jianpeng Teng|44594370
-|Yuying Wang|44952532
+|Junyi Zhang|  46273473
+|Jianpeng Teng|  44594370
+|Yuying Wang|  44952532
 **** 
 ## Table of contents
 * 
