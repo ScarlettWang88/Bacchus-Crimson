@@ -11,7 +11,7 @@ This project involves using a Bluetooth barcode scanner and an NFC card reader. 
 |Yuying Wang|  44952532
 **** 
 ## Table of contents
-* [Task List](#Task List)
+* [Task List](#TaskList)
 * KPIs
 * Intruction
 * Folder tree
@@ -21,11 +21,11 @@ This project involves using a Bluetooth barcode scanner and an NFC card reader. 
 *
 ***
 ## KPIs
-• Sensor: Light and NFC
-• Actuator: OLED Display
-• Use non-trivial wireless networking: Bluetooth. 
-• Algorithms：IoT BlockChain
-• GUI
+* Sensor: Light and NFC
+* Actuator: OLED Display
+* Use non-trivial wireless networking: Bluetooth. 
+* Algorithms：IoT BlockChain
+* GUI
 ***
 ## Intruction
 
