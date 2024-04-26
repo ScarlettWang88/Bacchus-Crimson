@@ -11,11 +11,11 @@ This project involves using a Bluetooth barcode scanner and an NFC card reader. 
 |Yuying Wang|  44952532
 **** 
 ## Table of contents
-* [Task List](#(Task List))
+* [Task List](#Task_List)
 * [KPIs](#KPIs)
-* Intruction
-* Folder tree
-* Reference
+* [Intruction](#Intruction)
+* [Folder tree](#Folder_tree)
+* [Reference](#Reference)
 ***
 ## Task List
 *
