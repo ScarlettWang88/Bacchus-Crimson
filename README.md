@@ -76,17 +76,19 @@ This project involves using a Bluetooth barcode scanner and an NFC card reader. 
 ## Folder tree
 Bacchus-Crimson/
 ├── Diagram/
-│   ├── block_diagram.pdf
-│   ├── DIKW.pdf
-│   └── flow_chart.pdf
+│ ├── block_diagram.pdf
+│ ├── DIKW.pdf
+│ └── flow_chart.pdf
 ├── Mycode/
-│   ├── Bluetooth/
-│   │   └── main.c
-│   └── Test/
-│       └── main.c
+│ ├── Bluetooth/
+│ │ └── main.c
+│ └── Test/
+│ └── main.c
 ├── UI/
-│   └── gui.py
+│ └── gui.py
 └── README.md
+
+
 
 ## Reference
 
