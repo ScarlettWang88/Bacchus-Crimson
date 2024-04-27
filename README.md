@@ -8,7 +8,7 @@ On the software side, a computer-based GUI application is used to receive, displ
 The implementation of this system will greatly enhance the efficiency and accuracy of warehouse management. The application of blockchain technology not only ensures the security and integrity of all logistics data but also provides real-time tracking and clear accountability, helping to improve management quality and operational transparency. Through this project, every step of warehouse operations can be precisely recorded and verified, providing management and operators with robust data support and query capabilities, as well as secure protection of the entire database.
 
 **** 
-#### Team member:
+### Team member:
 
 |Member|Student Number|
 |---|---
