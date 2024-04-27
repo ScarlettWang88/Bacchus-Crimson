@@ -27,9 +27,9 @@ The implementation of this system will greatly enhance the efficiency and accura
 * OLED Display
 * Light sensor(Barcode Scanner)
     * Light Sensors
-        Barcode scanners utilize light sensors, typically employing laser diodes or LEDs to illuminate barcodes. The pattern of light reflected back is captured by either photodiodes or CCDs (Charge-Coupled Devices).
+        * Barcode scanners utilize light sensors, typically employing laser diodes or LEDs to illuminate barcodes. The pattern of light reflected back is captured by either photodiodes or CCDs (Charge-Coupled Devices).
     * Optical Data
-        The scanner needs to capture the varying patterns of light and dark bars from the barcode which encode data such as product IDs, prices, or inventory information.
+        * The scanner needs to capture the varying patterns of light and dark bars from the barcode which encode data such as product IDs, prices, or inventory information.
     * Integrated
         * Optical Assembly: To focus and collect the reflected light from the barcode.
         * Signal Decoder: Converts the optical signal from the light sensor into digital data.
