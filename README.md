@@ -76,7 +76,7 @@ The implementation of this system will greatly enhance the efficiency and accura
         * Block Confirmation: The newly mined block is again verified by other nodes in the network. Once the majority of nodes confirm the validity of the block, it is officially added to the blockchain, and each node updates its copy of the blockchain.
         * Transaction Confirmation: A transaction is considered confirmed once it is included in a block that has been confirmed by the network.
 
-This process ensures the security, transparency, and immutability of transactions and data.
+     This process ensures the security, transparency, and immutability of transactions and data.
 * Task7: Create a Graphical User Interface (GUI)
     * Design and implement a GUI for displaying and managing records of package check-ins and check-outs, as well as user information.
     * Integrate real-time data updates and control functionalities to allow intuitive operation and monitoring of the system status.
