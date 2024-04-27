@@ -73,7 +73,7 @@ This project involves using a Bluetooth barcode scanner and an NFC card reader. 
 ## Intruction
 
 ***
-## Folder tree
+## Folder Structure
 Bacchus-Crimson/
 ├── Diagram/
 │   ├── block_diagram.pdf
