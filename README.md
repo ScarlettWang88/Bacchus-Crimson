@@ -118,9 +118,11 @@ The implementation of this system will greatly enhance the efficiency and accura
     │   └── flow_chart.pdf
     ├── Mycode/
     │   ├── Bluetooth/
-    │   └── main.c
+    │   │       └──src
+    │   │         └── main.c
     │   └── Test/
-    │   └── main.c
+    │       └──src
+    │           └── main.c
     ├── UI/
     │   └── gui.py
     └── README.md
