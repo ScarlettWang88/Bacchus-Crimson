@@ -1,4 +1,6 @@
-# CSSE4010 project: Barcode Scanner and card logging for invertory management - TEAM A
+# Bacchus-Crimson
+
+## CSSE4010 project: Barcode Scanner and card logging for invertory management - TEAM A
 This project aims to design and implement a blockchain-based warehouse logistics management system that integrates barcode scanning, NFC technology, and Bluetooth communication. Through this integration, the system can track and record real-time entries and exits of goods in the warehouse, thus enhancing the transparency and security of logistics data. The system primarily consists of three hardware components, all of which communicate via Bluetooth: a barcode scanner equipped with an OLED display to show item information and scan times in real-time; an NFC scanner to identify and log operator user IDs; and a base transmission device responsible for integrating data and transferring it to a computer.
 
 On the software side, a computer-based GUI application is used to receive, display, and query scanned item data and status, providing a user-friendly interface. Additionally, the computer acts as a node in the blockchain network, processing and verifying data obtained through scanning. Once data is verified and confirmed through the network's consensus mechanism, related transactions are packaged into new blocks and added to the blockchain. This process ensures the data's immutability and the traceability of history.
@@ -14,7 +16,7 @@ The implementation of this system will greatly enhance the efficiency and accura
 |Jianpeng Teng|  44594370
 |Yuying Wang|  44952532
 **** 
-## Table of contents
+### Table of contents
 * [Tool Module](#Tool-module)
 * [Task List](#Task-List)
 * [KPIs](#KPIs)
@@ -22,7 +24,7 @@ The implementation of this system will greatly enhance the efficiency and accura
 * [Folder tree](#Folder-tree)
 * [Reference](#Reference)
 ***
-## Tool Module：
+### Tool Module：
 * nRF52840 DK
 * OLED Display
 * Light sensor(Barcode Scanner)
@@ -45,7 +47,7 @@ The implementation of this system will greatly enhance the efficiency and accura
         * Data Processor: Handles data processing tasks such as reading, writing, and possibly encrypting data before it is sent over Bluetooth.
         * System Interface: NFC sensors typically connect to a main system controller via communication protocols like SPI, I2C, or UART, which then manages Bluetooth data transmission.
 ***
-## Task List
+### Task List
 * Task1: Barcode Scanner scan package ID
     * Use an light sensor to scan barcodes and retrieve package IDs.
     * Develop an algorithm to recognize barcodes and convert them into numerical or textual ID forms.
@@ -81,7 +83,7 @@ The implementation of this system will greatly enhance the efficiency and accura
     * Design and implement a GUI for displaying and managing records of package check-ins and check-outs, as well as user information.
     * Integrate real-time data updates and control functionalities to allow intuitive operation and monitoring of the system status.
 ***
-## KPIs
+### KPIs
 * Sensor: Light and NFC
     * Light sensor（Barcode Scanner）
         * 99% accuracy in barcode scanning
@@ -105,10 +107,10 @@ The implementation of this system will greatly enhance the efficiency and accura
     * Response time of under 100 milliseconds for any action
     * GUI loads in under 2 seconds on the target hardware
 ***
-## Intruction
+### Intruction
 
 ***
-## Folder Structure
+### Folder Structure
     Bacchus-Crimson/
     ├── Diagram/
     │   ├── block_diagram.pdf
@@ -125,7 +127,7 @@ The implementation of this system will greatly enhance the efficiency and accura
 
 
 
-## Reference
+### Reference
 NFC Basics
 https://developer.android.com/develop/connectivity/nfc/nfc?hl=zh-cn
 
