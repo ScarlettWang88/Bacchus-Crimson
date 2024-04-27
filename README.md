@@ -33,7 +33,7 @@ This project involves using a Bluetooth barcode scanner and an NFC card reader. 
 * Task3: OLED Display show the current state of the system
     * Integrate an OLED display to show real-time system information
     
-        Scanned out item X, at time Y
+    Scanned out item X, at time Y
     * Program the display to dynamically update the content reflecting the latest scanning and user activities.
 * Task4: Transmit Data via Bluetooth from barcode and NFC Scanners
     * Implement a Bluetooth module to send recognized package IDs and user IDs to a central processor or server.
