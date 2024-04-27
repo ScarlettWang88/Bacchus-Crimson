@@ -15,7 +15,7 @@ The implementation of this system will greatly enhance the efficiency and accura
 |Yuying Wang|  44952532
 **** 
 ## Table of contents
-* 
+* [Tool Module](#Tool-module)
 * [Task List](#Task-List)
 * [KPIs](#KPIs)
 * [Intruction](#Intruction)
@@ -26,9 +26,24 @@ The implementation of this system will greatly enhance the efficiency and accura
 * nRF52840 DK
 * OLED Display
 * Light sensor(Barcode Scanner)
-    *
+    * Light Sensors
+        Barcode scanners utilize light sensors, typically employing laser diodes or LEDs to illuminate barcodes. The pattern of light reflected back is captured by either photodiodes or CCDs (Charge-Coupled Devices).
+    * Optical Data
+        The scanner needs to capture the varying patterns of light and dark bars from the barcode which encode data such as product IDs, prices, or inventory information.
+    * Integrated
+        * Optical Assembly: To focus and collect the reflected light from the barcode.
+        * Signal Decoder: Converts the optical signal from the light sensor into digital data.
+        * Data Interface: The digital data is processed and encoded into a format suitable for Bluetooth transmission.
 * NFC sensor
-    *
+    * NFC Modules
+        * These sensors are capable of reading and writing to NFC tags using RF (Radio Frequency) communication. They generate a small electromagnetic field that powers the tag and allows data transfer.
+    * Electromagnetic Data
+        * NFC sensors interact with NFC tags to retrieve or write data, such as links, transaction details, or authentication tokens.
+    * Integrated
+        * Antenna: To create and manage the electromagnetic field necessary for communication with NFC tags.
+        * Transceiver: Manages data sending and receiving operations.
+        * Data Processor: Handles data processing tasks such as reading, writing, and possibly encrypting data before it is sent over Bluetooth.
+        * System Interface: NFC sensors typically connect to a main system controller via communication protocols like SPI, I2C, or UART, which then manages Bluetooth data transmission.
 ***
 ## Task List
 * Task1: Barcode Scanner scan package ID
@@ -45,7 +60,7 @@ The implementation of this system will greatly enhance the efficiency and accura
 * Task4: Transmit Data via Bluetooth from barcode and NFC Scanners
     * Implement a Bluetooth module to send recognized package IDs and user IDs to a central processor or server.
 * Task5: Develop a Data Receiver to Receive Data via Bluetooth
-    * DK(Now)
+    * Combining Barcode and NFC Data for Transmission to PC Using JSON Protocol
 * Task6: Data Processing
     * Blockchain Environment Setup
         * Define Data Structures: This includes package barcodes, timestamps, operator NFC identifiers, and item status (inbound, outbound).
@@ -60,7 +75,7 @@ The implementation of this system will greatly enhance the efficiency and accura
         * Block Mining: New blocks are mined through a proof-of-work system or other consensus mechanisms. Successful mining means the block will be added to the blockchain.
         * Block Confirmation: The newly mined block is again verified by other nodes in the network. Once the majority of nodes confirm the validity of the block, it is officially added to the blockchain, and each node updates its copy of the blockchain.
         * Transaction Confirmation: A transaction is considered confirmed once it is included in a block that has been confirmed by the network.
-        
+
 This process ensures the security, transparency, and immutability of transactions and data.
 * Task7: Create a Graphical User Interface (GUI)
     * Design and implement a GUI for displaying and managing records of package check-ins and check-outs, as well as user information.
@@ -111,6 +126,9 @@ This process ensures the security, transparency, and immutability of transaction
 
 
 ## Reference
+NFC Basics
+https://developer.android.com/develop/connectivity/nfc/nfc?hl=zh-cn
+
 
 
 
