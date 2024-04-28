@@ -99,7 +99,7 @@ The implementation of this system will greatly enhance the efficiency and accura
     * Average connection establishment time less than 5 seconds
     * Communication latency within 10 milliseconds
     * Maintain stable communication at least 30 meters in open space
-* Algorithms：IoT BlockChain
+* Algorithms schemes：IoT BlockChain
     * Blockchain node uptime of 99.9%
     * Average block confirmation time of less than 10 seconds
     * Data integrity error rate of less than 1%
@@ -112,20 +112,25 @@ The implementation of this system will greatly enhance the efficiency and accura
 ***
 ### Folder Structure
     Bacchus-Crimson/
-    ├── Diagram/
-    │   ├── block_diagram.pdf
-    │   ├── DIKW.pdf
-    │   └── flow_chart.pdf
-    ├── Mycode/
-    │   ├── Bluetooth/
-    │   │       └──src
-    │   │         └── main.c
-    │   └── Test/
-    │       └──src
-    │           └── main.c
-    ├── UI/
-    │   └── gui.py
-    └── README.md
+    ├── Diagram
+    │   └── 我不是空文件夹.c
+    ├── Mycode
+    │   ├── apps
+    │   │   ├── Bluetooth
+    │   │   │   ├── CMakeLists.txt
+    │   │   │   ├── prj.conf
+    │   │   │   └── src
+    │   │   │       └── main.c
+    │   │   └── Test
+    │   │       ├── CMakeLists.txt
+    │   │       ├── prj.conf
+    │   │       └── src
+    │   │           └── main.c
+    │   └── include
+    │       └── dummy.h
+    ├── README.md
+    └── UI
+        └── gui.py
 
 
 
