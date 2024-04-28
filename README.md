@@ -94,6 +94,7 @@ The implementation of this system will greatly enhance the efficiency and accura
 figure 2: DIKW Pyramid Abstraction
 ***
 ### Wireless Network Communications
+* bluetooth
 ![image](https://github.com/ScarlettWang88/Bacchus-Crimson/blob/project/Diagram/masssge_protocol_diagram.jpg)
 figure 3: message protocol diagram
 ***
@@ -145,16 +146,21 @@ By integrating these algorithmic solutions, your project can fully leverage the 
     │   └── masssge_protocol_diagram.jpg
     ├── Mycode
     │   ├── apps
-    │   │   ├── Bluetooth
+    │   │   ├── NFC
     │   │   │   ├── CMakeLists.txt
     │   │   │   ├── prj.conf
     │   │   │   └── src
     │   │   │       └── main.c
-    │   │   └── Test
+    │   │   ├── Scanner
+    │   │   │   ├── CMakeLists.txt
+    │   │   │   ├── prj.conf
+    │   │   │   └── src
+    │   │   │       └── main.c
+    │   │   └── nRF52840DK
     │   │       ├── CMakeLists.txt
     │   │       ├── prj.conf
     │   │       └── src
-    │   │           └── main.c
+    │   │           └── main.c  
     │   └── include
     │       └── dummy.h
     ├── README.md
