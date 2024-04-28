@@ -10,11 +10,12 @@ The implementation of this system will greatly enhance the efficiency and accura
 **** 
 ### Team member:
 
-|Member|Student Number|
+|Member|Student Number | Roles
 |---|---
-|Junyi Zhang|  46273473
-|Jianpeng Teng|  44594370
-|Yuying Wang|  44952532
+|Junyi Zhang|  46273473  | *
+|Jianpeng Teng|  44594370  |*
+|Yuying Wang|  44952532 |*
+
 **** 
 ### Table of contents
 * [Tool Module](#Tool-module)
@@ -146,9 +147,6 @@ By integrating these algorithmic solutions, your project can fully leverage the 
 * Creae a dashboard to view the package inventory：GUI
     * Response time of under 100 milliseconds for any action
     * GUI loads in under 2 seconds on the target hardware
-***
-### Intruction
-
 ***
 ### Folder Structure
     Bacchus-Crimson/
