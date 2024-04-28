@@ -94,8 +94,8 @@ The implementation of this system will greatly enhance the efficiency and accura
 figure 2: DIKW Pyramid Abstraction
 ***
 ### Wireless Network Communications
-![image](https://github.com/ScarlettWang88/Bacchus-Crimson/blob/project/Diagram/block_diagram.jpg)
-figure 1: message protocol diagram
+![image](https://github.com/ScarlettWang88/Bacchus-Crimson/blob/project/Diagram/masssge_protocol_diagram.jpg)
+figure 3: message protocol diagram
 ***
 ### Algorithms schemes
 * Hash Function for Adding Blocks
@@ -108,7 +108,7 @@ figure 1: message protocol diagram
     * Design and deploy smart contracts to handle logistics data, such as recording the inbound and outbound movements of packages, validating operator actions, and possibly triggering further actions such as notifying recipients or updating inventory records.
 * Transaction Signature Verification
     * ECDSA (Elliptic Curve Digital Signature Algorithm): This is a signature algorithm based on elliptic curve cryptography, used to generate and verify digital signatures. ECDSA is extensively used in blockchain to ensure that transactions are initiated by legitimate and correct parties and have not been tampered with.
-    
+
 By integrating these algorithmic solutions, your project can fully leverage the advantages of blockchain technology, providing a secure, transparent, and efficient logistics and warehousing management system. Each algorithm plays a critical role in your system, ensuring the legality of all operations and the security of the data. The selection and implementation of these algorithms should be carefully considered based on your specific needs and goals.
 ***
 ### KPIs
@@ -142,7 +142,7 @@ By integrating these algorithmic solutions, your project can fully leverage the 
     Bacchus-Crimson/
     ├── Diagram
     │   ├── DIKW.jpg
-    │   └── block_diagram.jpg
+    │   └── masssge_protocol_diagram.jpg
     ├── Mycode
     │   ├── apps
     │   │   ├── Bluetooth
