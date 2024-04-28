@@ -94,7 +94,18 @@ The implementation of this system will greatly enhance the efficiency and accura
 figure 2: DIKW Pyramid Abstraction
 ***
 ### Wireless Network Communications
-* bluetooth
+In this project, there are three main wireless communication nodes: the barcode scanner, NFC reader, and BaseNode. They interact with each other through specific wireless transmission protocols, ensuring efficient and secure data transmission.
+
+* Barcode Scanner Communication:
+    * The barcode scanner transmits data using the Bluetooth Low Energy (BLE) protocol. After scanning the barcode of a package, the device packages the scanned barcode data, along with the device's unique identifier (UUID) and signal strength (RSSI) into the iBeacon broadcast format, and then sends it out via BLE wireless signal. The iBeacon protocol, designed for proximity communication, is suitable for rapid and energy-efficient data transfer between devices.
+
+* NFC Reader Communication:
+    * The NFC reader uses Near Field Communication (NFC) technology to capture the identity information of the operator. When an operator approaches the reader with an NFC tag, the reader quickly identifies the user ID on the NFC tag and transmits this information using the same BLE iBeacon advertisement. The very short working distance of NFC technology ensures the security of transactions, as only users close to the reader can be identified and recorded.
+
+* BaseNode Central Processing:
+    * BaseNode acts as a central processing node, using BLE technology to receive data from both the barcode scanner and NFC reader. BaseNode then integrates this data into a JSON file, which structures timestamps, user IDs, and barcode data. Thereafter, BaseNode transmits this JSON file to a PC GUI and local database for further processing. This data is eventually packaged into blocks and added to the entire blockchain network.
+
+Each node's wireless communication is implemented through BLE, as BLE provides a high-energy-efficient, low-cost, and sufficiently flexible way to send small data packets. This allows the barcode scanner and NFC reader to operate for extended periods without frequent recharging or battery replacement. Through the application of these protocols and wireless communication methods, the project achieves efficient data capture, secure operator verification, and rapid data aggregation and upload.
 ![image](https://github.com/ScarlettWang88/Bacchus-Crimson/blob/project/Diagram/masssge_protocol_diagram.jpg)
 figure 3: message protocol diagram
 ***
@@ -156,7 +167,7 @@ By integrating these algorithmic solutions, your project can fully leverage the 
     │   │   │   ├── prj.conf
     │   │   │   └── src
     │   │   │       └── main.c
-    │   │   └── nRF52840DK
+    │   │   └── BaseNode
     │   │       ├── CMakeLists.txt
     │   │       ├── prj.conf
     │   │       └── src
