@@ -85,7 +85,8 @@ The implementation of this system will greatly enhance the efficiency and accura
     * Integrate real-time data updates and control functionalities to allow intuitive operation and monitoring of the system status.
 ***
 ### DIKW
-![image][https://github.com/ScarlettWang88/Bacchus-Crimson/blob/project/Diagram/DIKW.jpg]
+![image](https://github.com/ScarlettWang88/Bacchus-Crimson/blob/project/Diagram/DIKW.jpg)
+
 figure 1: DIKW Pyramid Abstraction
 ***
 ### KPIs
