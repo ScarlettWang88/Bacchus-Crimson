@@ -11,7 +11,7 @@ The implementation of this system will greatly enhance the efficiency and accura
 ### Team member:
 
 |Member|Student Number | Roles
-|---|---
+|---|---|---
 |Junyi Zhang|  46273473  | 
 |Jianpeng Teng|  44594370  |
 |Yuying Wang|  44952532 |
