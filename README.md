@@ -22,6 +22,8 @@ The implementation of this system will greatly enhance the efficiency and accura
 * [Task List](#Task-List)
 * [Block Diagram](#Block-Diagram)
 * [DIKW](#DIKW)
+* [Wireless Network Communications](#Wireless-Network-Communications)
+* [Algorithms schemes](#Algorithms-schemes)
 * [KPIs](#KPIs)
 * [Intruction](#Intruction)
 * [Folder tree](#Folder-tree)
