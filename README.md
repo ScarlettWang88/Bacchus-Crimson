@@ -86,13 +86,29 @@ The implementation of this system will greatly enhance the efficiency and accura
     * Integrate real-time data updates and control functionalities to allow intuitive operation and monitoring of the system status.
 ***
 ### Block Diagram
-![image](https://github.com/ScarlettWang88/Bacchus-Crimson/blob/project/Diagram/block_diagram.jpg)
-figure 1: Block Diagram
+
 ***
 ### DIKW
 ![image](https://github.com/ScarlettWang88/Bacchus-Crimson/blob/project/Diagram/DIKW.jpg)
 
 figure 2: DIKW Pyramid Abstraction
+***
+### Wireless Network Communications
+![image](https://github.com/ScarlettWang88/Bacchus-Crimson/blob/project/Diagram/block_diagram.jpg)
+figure 1: message protocol diagram
+***
+### Algorithms schemes
+* Hash Function for Adding Blocks
+    * Use of SHA-256: This widely used secure hash algorithm encrypts data and adds blocks. It generates a 256-bit hash value, ensuring the uniqueness and integrity of the block data.
+* Consensus Algorithm
+    * Proof of Stake (PoS): This method is used for block validation, employing defined authority metrics and algorithmic mechanisms to create new blocks and validate them through other nodes.
+* Chain Data Structure
+    * Linked List: In blockchain, each block contains a link to the hash value of the previous block, forming a continuous chain. This structure ensures data integrity from any block back to the original block (genesis block).
+* Creation of Smart Contracts
+    * Design and deploy smart contracts to handle logistics data, such as recording the inbound and outbound movements of packages, validating operator actions, and possibly triggering further actions such as notifying recipients or updating inventory records.
+* Transaction Signature Verification
+    * ECDSA (Elliptic Curve Digital Signature Algorithm): This is a signature algorithm based on elliptic curve cryptography, used to generate and verify digital signatures. ECDSA is extensively used in blockchain to ensure that transactions are initiated by legitimate and correct parties and have not been tampered with.
+By integrating these algorithmic solutions, your project can fully leverage the advantages of blockchain technology, providing a secure, transparent, and efficient logistics and warehousing management system. Each algorithm plays a critical role in your system, ensuring the legality of all operations and the security of the data. The selection and implementation of these algorithms should be carefully considered based on your specific needs and goals.
 ***
 ### KPIs
 * Sensor: Light and NFC
