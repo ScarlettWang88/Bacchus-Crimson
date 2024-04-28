@@ -85,7 +85,7 @@ The implementation of this system will greatly enhance the efficiency and accura
     * Design and implement a GUI for displaying and managing records of package check-ins and check-outs, as well as user information.
     * Integrate real-time data updates and control functionalities to allow intuitive operation and monitoring of the system status.
 ***
-###Block Diagram
+### Block Diagram
 ![image](https://github.com/ScarlettWang88/Bacchus-Crimson/blob/project/Diagram/block_diagram.jpg)
 figure 1: Block Diagram
 ***
