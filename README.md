@@ -19,6 +19,7 @@ The implementation of this system will greatly enhance the efficiency and accura
 ### Table of contents
 * [Tool Module](#Tool-module)
 * [Task List](#Task-List)
+* [DIKW](#DIKW)
 * [KPIs](#KPIs)
 * [Intruction](#Intruction)
 * [Folder tree](#Folder-tree)
@@ -83,6 +84,10 @@ The implementation of this system will greatly enhance the efficiency and accura
     * Design and implement a GUI for displaying and managing records of package check-ins and check-outs, as well as user information.
     * Integrate real-time data updates and control functionalities to allow intuitive operation and monitoring of the system status.
 ***
+### DIKW
+https://github.com/ScarlettWang88/Bacchus-Crimson/tree/ce51cd8aa5688d5ba83664834e37fe1ed9275d0c/Diagram/DIKW.jpg
+figure 1: DIKW Pyramid Abstraction
+***
 ### KPIs
 * Sensor: Light and NFC
     * Light sensor（Barcode Scanner）
@@ -113,7 +118,6 @@ The implementation of this system will greatly enhance the efficiency and accura
 ### Folder Structure
     Bacchus-Crimson/
     ├── Diagram
-    │   └── 我不是空文件夹.c
     ├── Mycode
     │   ├── apps
     │   │   ├── Bluetooth
