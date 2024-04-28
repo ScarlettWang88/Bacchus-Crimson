@@ -12,9 +12,9 @@ The implementation of this system will greatly enhance the efficiency and accura
 
 |Member|Student Number | Roles
 |---|---
-|Junyi Zhang|  46273473  | *
-|Jianpeng Teng|  44594370  |*
-|Yuying Wang|  44952532 |*
+|Junyi Zhang|  46273473  | 
+|Jianpeng Teng|  44594370  |
+|Yuying Wang|  44952532 |
 
 **** 
 ### Table of contents
