@@ -89,12 +89,17 @@ The implementation of this system will greatly enhance the efficiency and accura
     * Integrate real-time data updates and control functionalities to allow intuitive operation and monitoring of the system status.
 ***
 ### Block Diagram
+![image](https://github.com/ScarlettWang88/Bacchus-Crimson/blob/project/Diagram/Flow_Chart_Base_BlockChain.drawio.pdf)
 
+figure 1: Base Flow chart
+![image](https://github.com/ScarlettWang88/Bacchus-Crimson/blob/project/Diagram/Flow_Chart_UI_BlockChain.drawio.pdf)
+
+figure 2: UI Flow chart
 ***
 ### DIKW
 ![image](https://github.com/ScarlettWang88/Bacchus-Crimson/blob/project/Diagram/DIKW.jpg)
 
-figure 2: DIKW Pyramid Abstraction
+figure 3: DIKW Pyramid Abstraction
 ***
 ### Wireless Network Communications
 In this project, there are three main wireless communication nodes: the barcode scanner, NFC reader, and BaseNode. They interact with each other through specific wireless transmission protocols, ensuring efficient and secure data transmission.
@@ -110,7 +115,8 @@ In this project, there are three main wireless communication nodes: the barcode 
 
 Each node's wireless communication is implemented through BLE, as BLE provides a high-energy-efficient, low-cost, and sufficiently flexible way to send small data packets. This allows the barcode scanner and NFC reader to operate for extended periods without frequent recharging or battery replacement. Through the application of these protocols and wireless communication methods, the project achieves efficient data capture, secure operator verification, and rapid data aggregation and upload.
 ![image](https://github.com/ScarlettWang88/Bacchus-Crimson/blob/project/Diagram/masssge_protocol_diagram.jpg)
-figure 3: message protocol diagram
+
+figure 4: message protocol diagram
 ***
 ### Algorithms schemes
 * Hash Function for Adding Blocks
