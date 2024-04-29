@@ -10,12 +10,20 @@ The implementation of this system will greatly enhance the efficiency and accura
 **** 
 ### Team member:
 
-|Member|Student Number | Roles
-|---|---|---
-|Junyi Zhang|  46273473  | 
-|Jianpeng Teng|  44594370  |
-|Yuying Wang|  44952532 |
+|Member|Student Number 
+|---|---
+|Junyi Zhang|  46273473  
+|Jianpeng Teng|  44594370  
+|Yuying Wang|  44952532 
 
+* Junyi Zhang - PC Software Development Lead
+    * Junyi Zhang brings extensive knowledge in software engineering and will lead the PC software development aspect of our project. With a keen eye for detail and a robust understanding of system architecture, Junyi is tasked with creating the user interface and integrating the various components of our system. Junyi's involvement is pivotal in ensuring that the software is reliable, user-friendly, and capable of handling complex tasks efficiently. Junyi's previous work on similar systems makes him an indispensable member of our team.
+
+* Jianpeng Teng - NFC Integration Specialist
+    * Specializing in Near Field Communication (NFC) technology, Jianpeng Teng is responsible for the integration of NFC capabilities into our system. His role involves programming the NFC reader and ensuring seamless communication between the user's ID cards and our system. His technical expertise and innovative approach to problem-solving are critical in enabling secure and quick user identification processes. Jianpeng's dedication to keeping abreast of the latest advancements in NFC technology guarantees our system's relevance and efficacy.
+
+* Yuying Wang - Barcode Scanning Coordinator
+    * Yuying Wang oversees the barcode scanning component of our project, focusing on the accurate and efficient capture of package IDs. With a background in electronics and sensor technology, Yuying is in charge of setting up and calibrating the barcode scanner, as well as integrating it with the rest of the system. Her role is essential in ensuring the speed and accuracy of our inventory management system. Yuying's previous success in deploying similar scanning solutions makes her the perfect fit for this role.
 **** 
 ### Table of contents
 * [Tool Module](#Tool-module)
