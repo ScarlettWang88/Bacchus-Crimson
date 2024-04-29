@@ -97,10 +97,10 @@ The implementation of this system will greatly enhance the efficiency and accura
     * Integrate real-time data updates and control functionalities to allow intuitive operation and monitoring of the system status.
 ***
 ### Block Diagram
-![image](https://github.com/ScarlettWang88/Bacchus-Crimson/blob/project/Diagram/node_flow_chart.jpg)
+![image](https://github.com/ScarlettWang88/Bacchus-Crimson/blob/project/Diagram/node_flow_chart.png)
 
 figure 1: Base Flow chart
-![image](https://github.com/ScarlettWang88/Bacchus-Crimson/blob/project/Diagram/UI_flow_chart.jpg)
+![image](https://github.com/ScarlettWang88/Bacchus-Crimson/blob/project/Diagram/UI_flow_chart.png)
 
 figure 2: UI Flow chart
 ***
