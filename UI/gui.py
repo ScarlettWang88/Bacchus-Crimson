@@ -221,7 +221,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                         self.print_shell(f"[ERROR] Product {product_id} out of stock.")
 
                 if self.bases.connected:
-                    self.bases.send(self.product_dict[product_id].json_display(self.current_user.user_order, self.in_out_stock_state))
+                    status = "0" if self.in_out_stock_state == IN_STOCK else "1"
+                    self.bases.send(self.product_dict[product_id].json_display(self.current_user.user_order, status))
                     self.print_shell(f"Product {product_id} sent to base station.")
                     self.print_shell(str(self.bases.receive_all_in_buffer()))
 
@@ -237,7 +238,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 self.update_display_product()
 
                 if self.bases.connected:
-                    self.bases.send(new_product.json_display(self.current_user.user_order, self.in_out_stock_state))
+                    status = "0" if self.in_out_stock_state == IN_STOCK else "1"
+                    self.bases.send(new_product.json_display(self.current_user.user_order, status))
                     self.print_shell(f"Product {product_id} sent to base station.")
                     self.print_shell(str(self.bases.receive_all_in_buffer()))
 
