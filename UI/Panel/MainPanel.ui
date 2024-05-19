@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1000</width>
+    <width>1082</width>
     <height>781</height>
    </rect>
   </property>
@@ -19,7 +19,7 @@
      <rect>
       <x>20</x>
       <y>410</y>
-      <width>571</width>
+      <width>581</width>
       <height>311</height>
      </rect>
     </property>
@@ -41,19 +41,19 @@ p, li { white-space: pre-wrap; }
      <rect>
       <x>20</x>
       <y>20</y>
-      <width>571</width>
+      <width>581</width>
       <height>161</height>
      </rect>
     </property>
     <property name="title">
      <string>User ID</string>
     </property>
-    <widget class="QTextBrowser" name="textBrowser_2">
+    <widget class="QTextBrowser" name="tbx_user">
      <property name="geometry">
       <rect>
        <x>10</x>
        <y>20</y>
-       <width>551</width>
+       <width>451</width>
        <height>131</height>
       </rect>
      </property>
@@ -68,107 +68,166 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
+    <widget class="QPushButton" name="btn_user_logout">
+     <property name="geometry">
+      <rect>
+       <x>470</x>
+       <y>20</y>
+       <width>101</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>User Log out</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_user_signin">
+     <property name="geometry">
+      <rect>
+       <x>470</x>
+       <y>110</y>
+       <width>101</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>User Sign in</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lined_user_new_name">
+     <property name="geometry">
+      <rect>
+       <x>470</x>
+       <y>70</y>
+       <width>101</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
    </widget>
    <widget class="QGroupBox" name="groupBox_2">
     <property name="geometry">
      <rect>
       <x>20</x>
       <y>190</y>
-      <width>571</width>
-      <height>201</height>
+      <width>581</width>
+      <height>181</height>
      </rect>
+    </property>
+    <property name="mouseTracking">
+     <bool>true</bool>
     </property>
     <property name="title">
      <string>Control Panel</string>
     </property>
-    <widget class="QPushButton" name="btn_start_connect">
+    <widget class="QCheckBox" name="cb_activ_ps">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>30</y>
-       <width>141</width>
-       <height>161</height>
+       <x>20</x>
+       <y>40</y>
+       <width>201</width>
+       <height>20</height>
       </rect>
      </property>
-     <property name="font">
-      <font>
-       <pointsize>9</pointsize>
-      </font>
+     <property name="tabletTracking">
+      <bool>true</bool>
      </property>
      <property name="text">
-      <string>Start Connection</string>
+      <string>Activate Product Scanning</string>
+     </property>
+     <property name="checked">
+      <bool>false</bool>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_3">
+    <widget class="QCheckBox" name="cb_activ_nfc">
      <property name="geometry">
       <rect>
-       <x>170</x>
-       <y>30</y>
-       <width>141</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>9</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Disconnect</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_4">
-     <property name="geometry">
-      <rect>
-       <x>170</x>
+       <x>20</x>
        <y>90</y>
-       <width>141</width>
-       <height>41</height>
+       <width>201</width>
+       <height>20</height>
       </rect>
      </property>
-     <property name="font">
-      <font>
-       <pointsize>9</pointsize>
-      </font>
+     <property name="tabletTracking">
+      <bool>true</bool>
      </property>
      <property name="text">
-      <string>Display Chain</string>
+      <string>Activate NFC Scanning</string>
+     </property>
+     <property name="checked">
+      <bool>false</bool>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_2">
+    <widget class="QCheckBox" name="cb_activ_base_cont">
      <property name="geometry">
       <rect>
-       <x>170</x>
-       <y>150</y>
-       <width>141</width>
-       <height>41</height>
+       <x>20</x>
+       <y>140</y>
+       <width>201</width>
+       <height>20</height>
       </rect>
      </property>
-     <property name="font">
-      <font>
-       <pointsize>9</pointsize>
-      </font>
+     <property name="tabletTracking">
+      <bool>true</bool>
      </property>
      <property name="text">
-      <string>Save data</string>
+      <string>Activate Base Connection</string>
+     </property>
+     <property name="checked">
+      <bool>false</bool>
      </property>
     </widget>
-    <widget class="QCheckBox" name="CB_auto_add">
+    <widget class="QPushButton" name="btn_save_product">
      <property name="geometry">
       <rect>
-       <x>360</x>
-       <y>30</y>
-       <width>161</width>
-       <height>41</height>
+       <x>250</x>
+       <y>110</y>
+       <width>291</width>
+       <height>51</height>
       </rect>
      </property>
-     <property name="font">
-      <font>
-       <pointsize>10</pointsize>
-      </font>
+     <property name="text">
+      <string>Save Product to DataBase</string>
+     </property>
+    </widget>
+    <widget class="QTextBrowser" name="tbx_stock_state">
+     <property name="geometry">
+      <rect>
+       <x>250</x>
+       <y>40</y>
+       <width>181</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="html">
+      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;In Stock&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_flip_stock_state">
+     <property name="geometry">
+      <rect>
+       <x>450</x>
+       <y>40</y>
+       <width>93</width>
+       <height>51</height>
+      </rect>
      </property>
      <property name="text">
-      <string>Auto Add to Chain</string>
+      <string>Flip State</string>
      </property>
     </widget>
    </widget>
@@ -177,20 +236,79 @@ p, li { white-space: pre-wrap; }
      <rect>
       <x>610</x>
       <y>20</y>
-      <width>361</width>
-      <height>701</height>
+      <width>451</width>
+      <height>551</height>
      </rect>
     </property>
     <property name="title">
      <string>Product scaned</string>
     </property>
-    <widget class="QTextBrowser" name="textBrowser">
+    <widget class="QTextBrowser" name="tbx_product">
      <property name="geometry">
       <rect>
        <x>10</x>
        <y>20</y>
-       <width>341</width>
-       <height>671</height>
+       <width>431</width>
+       <height>521</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_4">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>570</y>
+      <width>451</width>
+      <height>151</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>GroupBox</string>
+    </property>
+    <widget class="QPushButton" name="btn_search">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>20</y>
+       <width>121</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Search</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lined_search">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>20</y>
+       <width>251</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>ID：</string>
+     </property>
+    </widget>
+    <widget class="QTextBrowser" name="tbx_search">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>60</y>
+       <width>431</width>
+       <height>81</height>
       </rect>
      </property>
     </widget>
@@ -201,7 +319,7 @@ p, li { white-space: pre-wrap; }
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1000</width>
+     <width>1082</width>
      <height>26</height>
     </rect>
    </property>

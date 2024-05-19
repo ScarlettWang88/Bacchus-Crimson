@@ -1,0 +1,5 @@
+IN_STOCK = True
+OUT_STOCK = False
+
+IN_STOCK_CODE = 0
+OUT_STOCK_CODE = 1
