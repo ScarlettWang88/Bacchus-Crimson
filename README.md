@@ -87,17 +87,14 @@ Yuying Wang - Barcode Scanning Coordinator
     * Integrate real-time data updates and control functionalities to allow intuitive operation and monitoring of the system status.
 ***
 ### Block Diagram
-![image](https://github.com/ScarlettWang88/Bacchus-Crimson/blob/project/Diagram/node_flow_chart.png)
+![image](https://github.com/ScarlettWang88/Bacchus-Crimson/blob/project/Diagram/flowchart.png)
 
-figure 1: Base Flow chart
-![image](https://github.com/ScarlettWang88/Bacchus-Crimson/blob/project/Diagram/UI_flow_chart.png)
-
-figure 2: UI Flow chart
+figure 2: Flow chart
 ***
 ### DIKW
 ![image](https://github.com/ScarlettWang88/Bacchus-Crimson/blob/project/Diagram/DIKW.jpg)
 
-figure 3: DIKW Pyramid Abstraction
+figure 2: DIKW Pyramid Abstraction
 ***
 ### Wireless Network Communications
 In this project, there are three main wireless communication nodes: the LED display, MeshNode, and BaseNode. They interact with each other through specific wireless transmission protocols, ensuring efficient and secure data transmission.
@@ -114,7 +111,7 @@ In this project, there are three main wireless communication nodes: the LED disp
 Each node's wireless communication is implemented through Bluetooth Mesh, as it provides a high-energy-efficient, low-cost, and sufficiently flexible way to send small data packets. This allows the barcode scanner and NFC reader to operate for extended periods without frequent recharging or battery replacement. By applying these protocols and wireless communication methods, the project achieves efficient data capture, secure operator verification, and rapid data aggregation and upload.
 ![image](https://github.com/ScarlettWang88/Bacchus-Crimson/blob/project/Diagram/masssge_protocol_diagram.JPG)
 
-figure 4: message protocol diagram
+figure 3: message protocol diagram
 ***
 ### Algorithms schemes
 #### Wireless Communication and Data Transmission
