@@ -89,7 +89,7 @@ Yuying Wang - Barcode Scanning Coordinator
 ### Block Diagram
 ![image](https://github.com/ScarlettWang88/Bacchus-Crimson/blob/project/Diagram/flowchart.png)
 
-figure 2: Flow chart
+figure 1: Flow chart
 ***
 ### DIKW
 ![image](https://github.com/ScarlettWang88/Bacchus-Crimson/blob/project/Diagram/DIKW.jpg)
