@@ -7,7 +7,7 @@
 char name[200];
 std::string manufacturerData;  // Global variable to store manufacturer data
 
-int scanTime = 5; // Scan time in seconds
+int scanTime = 10; // Scan time in seconds
 BLEScan* pBLEScan;
 
 int lastUserId = -1; // Store the last user ID to detect changes
@@ -36,17 +36,22 @@ bool processManufacturerData(const std::string& data) {
         // Data matches the header, process further
         if (data[6] == (char)0x05 && data[7] == (char)0xc2) {
             int user_id = static_cast<unsigned char>(data[8]);
-            bool scan_in = data[9] == 0;
+            int scan_type = static_cast<unsigned char>(data[9]);
+            String scanType;
+            if (scan_type == 0){
+              scanType = "scan in item:";
+            }else if (scan_type == 1){
+              scanType = "scan out item:";
+            }else {
+              scanType = "Non valid status type";
+            }
             int month = static_cast<unsigned char>(data[10]);
             int day = static_cast<unsigned char>(data[11]);
             int hour = static_cast<unsigned char>(data[12]);
             int minute = static_cast<unsigned char>(data[13]);
             std::string barcodeData = data.size() > 14 ? data.substr(14) : "";
 
-            // Update display only if the data has changed
-            if (user_id != lastUserId || barcodeData != lastBarcodeData) {
-                lastUserId = user_id;
-                lastBarcodeData = barcodeData;
+            
 
                 uint16_t backgroundColor = M5.Lcd.color565(0xFF, 0xD0, 0xD0); // #FFD0D0
                 M5.Lcd.fillScreen(backgroundColor);
@@ -65,23 +70,25 @@ bool processManufacturerData(const std::string& data) {
                 M5.Lcd.setTextDatum(MC_DATUM); // Set text alignment to center
 
                 // Print user ID
-                M5.Lcd.drawString("User " + String(user_id), screenWidth / 2, screenHeight / 2 - 80);
-
-                // Print scan type and barcode data
-                String scanType = scan_in ? "scan in" : "scan out";
-                M5.Lcd.drawString("has " + scanType + " item:", screenWidth / 2, screenHeight / 2 - 40);
+                if (user_id == 0){
+                  M5.Lcd.drawString("None User ", screenWidth / 2, screenHeight / 2 - 80);
+                }else{
+                  M5.Lcd.drawString("User " + String(user_id), screenWidth / 2, screenHeight / 2 - 80);
+                }
+              
+                M5.Lcd.drawString(scanType, screenWidth / 2, screenHeight / 2 - 40);
                 
                 // Set barcode data text color and size
                 M5.Lcd.setTextColor(barcodeColor, backgroundColor); // Set text color to barcodeColor, background to light pink
                 M5.Lcd.setTextSize(2); // Set barcode data text size
 
                 // Print barcode data and timestamp
-                if (!barcodeData.empty()) {
+                if (!barcodeData.empty() && month != 0) {
                     String timestamp = String(month) + "/" + String(day) + " " + String(hour) + ":" + String(minute);
                     M5.Lcd.drawString(barcodeData.c_str(), screenWidth / 2, screenHeight / 2);
                     M5.Lcd.drawString("in " + timestamp, screenWidth / 2, screenHeight / 2 + 30);
                 }
-            }
+            
             return true;
         }
     }
@@ -109,5 +116,5 @@ void loop() {
     BLEScanResults foundDevices = pBLEScan->start(scanTime, false);
     Serial.printf("Devices found: %d\n", foundDevices.getCount());
     pBLEScan->clearResults();   // Delete results from BLEScan buffer to release memory
-    delay(2000);
+    delay(500);
 }
