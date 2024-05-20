@@ -10,6 +10,10 @@ In terms of software, a computer-based GUI application is used to receive, displ
 
 The implementation of this system will greatly improve the efficiency and accuracy of warehouse management. The application of the Bluetooth Mesh network not only extends the communication range, ensuring stable connections and data synchronization within a large warehouse area, but also provides real-time tracking and clear accountability, helping to improve management quality and operational transparency. Through this project, every step of warehouse operations can be accurately recorded and verified, providing strong data support and query capabilities for management and operational personnel, thereby optimizing overall productivity and management levels.
 
+
+![image](https://github.com/ScarlettWang88/Bacchus-Crimson/blob/project/Diagram/pc.jpg)
+
+figure 1: physical picture
 **** 
 ### Team member:
 
@@ -44,11 +48,12 @@ Yuying Wang - Barcode Scanning Coordinator
 * [Reference](#Reference)
 ***
 ### Tool Module：
-* nRF52840 DK 
-* thingy52
-* OLED Display - M5 core2
-* Barcode Scanner
-* NFC sensor
+* BarcodeScanner: Scans barcodes to read item information and control check-in/check-out status 
+* NFC Reader: Captures user ID and information.
+* nRF52840 DK(Base Node): Central processing unit that aggregates data and transmits it to the GUI and database.
+* Thingy52(Mesh Node): Facilitates data transmission and relay via Bluetooth Mesh.
+* LCD Display: Shows item status and timestamps.
+* PC GUI:Provides real-time monitoring, querying and data updates.
 ***
 ### Task List
 * Task1: Barcode Scanner scan package ID
@@ -58,8 +63,8 @@ Yuying Wang - Barcode Scanning Coordinator
 * Task2 :NFC Sensor to Identify User IDs
     * Configure an NFC reader to read NFC cards
     * Design the system to extract user IDs from NFC cards, ensuring authentication and logging.
-* Task3: OLED Display show the current state of the system
-    * Integrate an OLED display to show real-time system information
+* Task3: LCD Display show the current state of the system
+    * Integrate an LCD display to show real-time system information
 
         eg：Scanned out item X, at time Y
     * Program the display to dynamically update the content reflecting the latest scanning and user activities.
@@ -89,18 +94,18 @@ Yuying Wang - Barcode Scanning Coordinator
 ### Block Diagram
 ![image](https://github.com/ScarlettWang88/Bacchus-Crimson/blob/project/Diagram/flowchart.png)
 
-figure 1: Flow chart
+figure 2: Flow chart
 ***
 ### DIKW
 ![image](https://github.com/ScarlettWang88/Bacchus-Crimson/blob/project/Diagram/DIKW.jpg)
 
-figure 2: DIKW Pyramid Abstraction
+figure 3: DIKW Pyramid Abstraction
 ***
 ### Wireless Network Communications
-In this project, there are three main wireless communication nodes: the LED display, MeshNode, and BaseNode. They interact with each other through specific wireless transmission protocols, ensuring efficient and secure data transmission.
+In this project, there are three main wireless communication nodes: the LCD display, MeshNode, and BaseNode. They interact with each other through specific wireless transmission protocols, ensuring efficient and secure data transmission.
 
-* LED Display Communication:
-    * The LED Display Node acts as the final presentation node, using the Bluetooth Mesh protocol to transmit and receive data. It receives information added to the Bluetooth Mesh network and displays the timestamp, user ID, and item status on the screen.
+* LCD Display Communication:
+    * The LCD Display Node acts as the final presentation node, using the Bluetooth Mesh protocol to transmit and receive data. It receives information added to the Bluetooth Mesh network and displays the timestamp, user ID, and item status on the screen.
 
 * Mesh Node Processing:
     * The Mesh Node acts as a relay node, using Bluetooth Mesh to receive and transmit data from the barcode scanner and NFC reader. It needs to receive JSON files sent by the Base Node and forward these files to all surrounding nodes, integrating them into the entire Mesh network. Additionally, the Mesh Node is responsible for monitoring the communication status of the network to ensure efficient and reliable data transmission. If any node encounters connectivity issues, the Mesh Node can automatically adjust the transmission path and reroute the data to ensure that the information reaches its destination smoothly.
@@ -111,7 +116,7 @@ In this project, there are three main wireless communication nodes: the LED disp
 Each node's wireless communication is implemented through Bluetooth Mesh, as it provides a high-energy-efficient, low-cost, and sufficiently flexible way to send small data packets. This allows the barcode scanner and NFC reader to operate for extended periods without frequent recharging or battery replacement. By applying these protocols and wireless communication methods, the project achieves efficient data capture, secure operator verification, and rapid data aggregation and upload.
 ![image](https://github.com/ScarlettWang88/Bacchus-Crimson/blob/project/Diagram/masssge_protocol_diagram.JPG)
 
-figure 3: message protocol diagram
+figure 4: message protocol diagram
 ***
 ### Algorithms schemes
 #### Wireless Communication and Data Transmission
@@ -135,12 +140,12 @@ By integrating these algorithmic solutions, your project can fully leverage the 
         * Scanning specific barcodes to control the barcode scanner's status (check-in/check-out)
     * NFC Sensor
         * Reading user ID and information by tapping a user card
-* Actuator: OLED Display
+* Actuator: LCD Display
     * Displaying item information and status at specific times
     e.g. Item X checked out at time Y
-    * The farthest LED display shows information within 5 seconds
+    * The farthest LCD display shows information within 5 seconds
 * Wireless Networking: Bluetooth Mesh 
-    * Each Mesh Node can receive and transmit information, and display it on the LED screen
+    * Each Mesh Node can receive and transmit information, and display it on the LCD screen
     * Maintain stable communication in open spaces
 * Dashboard for Viewing Package Inventory: GUI
     * Display user information
@@ -150,31 +155,110 @@ By integrating these algorithmic solutions, your project can fully leverage the 
 ***
 ### Folder Structure
     Bacchus-Crimson/
+    ├── .DS_Store
     ├── Diagram
-    │   ├── DIKW.jpg
-    │   └── masssge_protocol_diagram.jpg
+    │   ├── DIKW.jpg
+    │   ├── Flow_Chart_Base_BlockChain.drawio.pdf
+    │   ├── Flow_Chart_UI_BlockChain.drawio.pdf
+    │   ├── UI_flow_chart.jpg
+    │   ├── UI_flow_chart.png
+    │   ├── flowchart.png
+    │   ├── masssge_protocol_diagram.JPG
+    │   ├── node_flow_chart.jpg
+    │   ├── node_flow_chart.png
+    │   └── pc.jpg
     ├── Mycode
-    │   ├── apps
-    │   │   ├── NFC
-    │   │   │   ├── CMakeLists.txt
-    │   │   │   ├── prj.conf
-    │   │   │   └── src
-    │   │   │       └── main.c
-    │   │   ├── Scanner
-    │   │   │   ├── CMakeLists.txt
-    │   │   │   ├── prj.conf
-    │   │   │   └── src
-    │   │   │       └── main.c
-    │   │   └── BaseNode
-    │   │       ├── CMakeLists.txt
-    │   │       ├── prj.conf
-    │   │       └── src
-    │   │           └── main.c  
-    │   └── include
-    │       └── dummy.h
+    │   ├── .DS_Store
+    │   ├── apps
+    │   │   ├── BaseNode
+    │   │   │   ├── CMakeLists.txt
+    │   │   │   ├── prj.conf
+    │   │   │   └── src
+    │   │   │       ├── bluetooth.c
+    │   │   │       └── main.c
+    │   │   ├── M5Core2
+    │   │   │   └── BLE_scan
+    │   │   │       └── BLE_scan.ino
+    │   │   ├── NFC
+    │   │   │   ├── CMakeLists.txt
+    │   │   │   ├── prj.conf
+    │   │   │   └── src
+    │   │   │       └── main.c
+    │   │   └── Scanner
+    │   │       ├── CMakeLists.txt
+    │   │       ├── prj.conf
+    │   │       └── src
+    │   │           └── main.c
+    │   └── include
+    │       └── dummy.h
     ├── README.md
-    └── UI
-        └── gui.py
+    ├── UI
+        ├── .idea
+        │   ├── .gitignore
+        │   ├── UI.iml
+        │   ├── inspectionProfiles
+        │   │   └── profiles_settings.xml
+        │   ├── misc.xml
+        │   ├── modules.xml
+        │   └── vcs.xml
+        ├── BarCode
+        │   ├── BarCodeScanner.py
+        │   └── __init__.py
+        ├── BlockChain_Tool
+        │   ├── Block.py
+        │   ├── BlockChain.py
+        │   ├── __init__.py
+        │   └── __pycache__
+        │       ├── Block.cpython-311.pyc
+        │       └── __init__.cpython-311.pyc
+        ├── BlueTooth
+        │   ├── IBeacon.py
+        │   ├── __init__.py
+        │   ├── __pycache__
+        │   │   ├── __init__.cpython-311.pyc
+        │   │   └── beacon.cpython-311.pyc
+        │   └── beacon.py
+        ├── DataBase
+        │   ├── Product.py
+        │   ├── User.py
+        │   ├── __init__.py
+        │   ├── __pycache__
+        │   │   ├── Product.cpython-311.pyc
+        │   │   ├── User.cpython-311.pyc
+        │   │   ├── __init__.cpython-311.pyc
+        │   │   ├── const.cpython-311.pyc
+        │   │   └── database_controller.cpython-311.pyc
+        │   ├── const.py
+        │   ├── database_controller.py
+        │   ├── products.txt
+        │   └── users.txt
+        ├── NFC
+        │   ├── NFCReader.py
+        │   ├── __init__.py
+        │   ├── __pycache__
+        │   │   ├── NFCReader.cpython-311.pyc
+        │   │   ├── __init__.cpython-311.pyc
+        │   │   └── user_database.cpython-311.pyc
+        │   └── user_database.py
+        ├── Panel
+        │   ├── MainPanel.py
+        │   ├── MainPanel.ui
+        │   ├── __init__.py
+        │   └── __pycache__
+        │       ├── MainPanel.cpython-311.pyc
+        │       └── __init__.cpython-311.pyc
+        ├── Uart
+        │   ├── Barcode.py
+        │   ├── Base_node.py
+        │   ├── Uart_Controller.py
+        │   ├── __init__.py
+        │   ├── __pycache__
+        │   │   ├── Barcode.cpython-311.pyc
+        │   │   ├── Base_node.cpython-311.pyc
+        │   │   ├── __init__.cpython-311.pyc
+        │   │   └── const.cpython-311.pyc
+        │   └── const.py
+        └── gui.py
 
 
 
