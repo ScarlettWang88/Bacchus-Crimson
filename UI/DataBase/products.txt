@@ -1,4 +1,9 @@
-Product: 9310036061748; User: [4, 120, 68, 242, 29, 17, 144]; In stock: 2024/05/19 19:09:55; Out stock: None; Stock: 4
-Product: 9341650001766; User: [4, 120, 68, 242, 29, 17, 144]; In stock: 2024/05/19 19:10:02; Out stock: None; Stock: 1
-Product: 9300613103541; User: [4, 120, 68, 242, 29, 17, 144]; In stock: 2024/05/19 19:10:07; Out stock: None; Stock: 1
-Product: 6931235800209; User: [4, 120, 68, 242, 29, 17, 144]; In stock: 2024/05/19 19:10:13; Out stock: None; Stock: 1
+Product: 9310036061748; Registrant: [4, 120, 68, 242, 29, 17, 144]; In stock: 2024/05/20 14:40:09; Out stock: 2024/05/20 14:39:42; Stock: 5
+Product: 9341650001766; Registrant: [4, 120, 68, 242, 29, 17, 144]; In stock: 2024/05/19 19:10:02; Out stock: None; Stock: 1
+Product: 9300613103541; Registrant: [4, 120, 68, 242, 29, 17, 144]; In stock: 2024/05/19 19:10:07; Out stock: None; Stock: 1
+Product: 6931235800209; Registrant: [4, 120, 68, 242, 29, 17, 144]; In stock: 2024/05/19 19:10:13; Out stock: None; Stock: 1
+Product: 12344; Registrant: [179, 132, 122, 11]; In stock: 2024/05/20 13:49:28; Out stock: 2024/05/20 13:50:06; Stock: 1
+Product: 123456789; Registrant: [62, 85, 116, 124]; In stock: 2024/05/20 13:49:40; Out stock: None; Stock: 1
+Product: 123456; Registrant: [62, 85, 116, 124]; In stock: 2024/05/20 14:36:09; Out stock: 2024/05/20 14:36:22; Stock: 1
+Product: csse4011; Registrant: [62, 85, 116, 124]; In stock: 2024/05/20 14:36:38; Out stock: 2024/05/20 14:36:57; Stock: 0
+Product: 4555; Registrant: [62, 85, 116, 124]; In stock: 2024/05/20 14:40:00; Out stock: 2024/05/20 14:37:37; Stock: 1

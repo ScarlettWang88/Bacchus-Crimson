@@ -1,16 +1,19 @@
 import time
 import os
 
+import serial
+import serial.tools.list_ports
+
 from UI.BlueTooth.beacon import BluetoothScanner
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QMainWindow, QApplication, QGraphicsScene, QGraphicsEllipseItem, QGraphicsView, \
-    QGraphicsPathItem
+from PyQt5.QtWidgets import QMainWindow, QDialog
 from PyQt5.QtCore import Qt, QPointF, QMutex
 from PyQt5.QtGui import QPainter, QPen, QColor, QBrush, QPainterPath
 import math
 import sys
 from Panel.MainPanel import Ui_MainWindow
+from Panel.Setting import Ui_Dialog_setting
 from UI.NFC.NFCReader import NFCReader
 from UI.DataBase.database_controller import load_users, save_users, load_product, save_product, get_current_time
 from UI.DataBase.Product import Product
@@ -38,6 +41,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # 将texte_shell的光标移动到最后
         self.texte_shell.moveCursor(QtGui.QTextCursor.End)
 
+        # 菜单栏设置, Action Settion 要打开
+        self.actionSetting.triggered.connect(self.set_up_setting_ui)
+
         # nfc 相关
         self.cb_activ_nfc.stateChanged.connect(self.nfc_switch)
         self.cb_activ_nfc.setChecked(True)
@@ -45,16 +51,18 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.btn_user_logout.clicked.connect(self.user_logout)
 
         # base 相关
-        self.bases = BaseNode(board_name, COM_port, baud_rate)
+        self.base_port = COM_port
+        self.bases = BaseNode(board_name, self.base_port, baud_rate)
         self.cb_activ_base_cont.stateChanged.connect(self.base_switch)
         # self.cb_activ_base_cont.setChecked(True)
 
         # barcode 相关
-        self.barcode = BarcodeReader()
+        self.barcode_port = "COM11"
+        self.barcode = BarcodeReader(self.barcode_port)
         self.barcode.product_signal.connect(self.register_product)
         self.barcode.connect_signal.connect(self.barcode_start)
         self.cb_activ_ps.stateChanged.connect(self.barcode_switch)
-        self.product_dict = load_product()
+        self.product_dict = load_product(self.user_id_dict)
         # self.update_display_product()
         self.btn_save_product.clicked.connect(self.save_all_product)
         # 出入库设定
@@ -64,6 +72,33 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         # search
         self.btn_search.clicked.connect(self.search_product)
+
+    # 实现Ui_Dialog_setting
+    def set_up_setting_ui(self):
+        dialog = QDialog(self)
+        ui = Ui_Dialog_setting()
+        ui.setupUi(dialog)
+        # 获取当前电脑的串口
+        self.update_com_port(ui)
+        ui.buttonBox.accepted.connect(lambda: self.update_selected_ports(ui))
+        ui.buttonBox.rejected.connect(dialog.reject)
+        dialog.exec_()
+
+    def update_com_port(self, ui):
+        ports = serial.tools.list_ports.comports()
+        com_ports = [port.device for port in ports]
+        ui.cb_base_portal.clear()
+        ui.cb_base_portal.addItems(com_ports)
+        ui.cb_barcode_portal.clear()
+        ui.cb_barcode_portal.addItems(com_ports)
+
+    def update_selected_ports(self, ui):
+        self.base_port = ui.cb_base_portal.currentText()
+        self.barcode_port = ui.cb_barcode_portal.currentText()
+        self.bases.port = self.base_port
+        self.barcode.port = self.barcode_port
+        self.print_shell(f"Base port: {self.base_port}")
+        self.print_shell(f"Barcode port: {self.barcode_port}")
 
     def flip_stock_state(self):
         if self.in_out_stock_state == IN_STOCK:
@@ -86,11 +121,15 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def nfc_switch(self):
         if self.cb_activ_nfc.isChecked():
             if not hasattr(self, 'nfc_reader'):
-                self.nfc_reader = NFCReader()
-                self.nfc_reader.user_signal.connect(self.display_user)
-                self.nfc_reader.info_signal.connect(self.print_shell)
-                self.nfc_reader.start()
-                self.print_shell("NFC reader started")
+                try:
+                    self.nfc_reader = NFCReader()
+                    self.nfc_reader.user_signal.connect(self.display_user)
+                    self.nfc_reader.info_signal.connect(self.print_shell)
+                    self.nfc_reader.start()
+                    self.print_shell("NFC reader started")
+                except Exception as e:
+                    self.print_shell(f"Error: {e}")
+                    self.cb_activ_nfc.setChecked(False)
         else:
             if hasattr(self, 'nfc_reader'):
                 mutex.lock()
@@ -191,10 +230,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         if barcode == IN_STOCK_CODE:
             self.in_out_stock_state = IN_STOCK
             self.print_shell("In stock mode.")
+            self.tbx_stock_state.setText("In Stock")
+            self.tbx_stock_state.setStyleSheet("font: 16pt \"MS Shell Dlg 2\";")
             return 0
         elif barcode == OUT_STOCK_CODE:
             self.in_out_stock_state = OUT_STOCK
             self.print_shell("Out stock mode.")
+            self.tbx_stock_state.setText("Out Stock")
+            self.tbx_stock_state.setStyleSheet("font: 16pt \"MS Shell Dlg 2\";")
             return 1
         # 如果是商品码
         return 2
@@ -232,7 +275,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     self.print_shell("[ERROR] Auto switched to in stock mode.")
                     self.in_out_stock_state = IN_STOCK
                 # 如果不存在，则添加新的产品
-                new_product = Product(self.current_user.get_user_id(), product_id, get_current_time())
+                new_product = Product(self.current_user, product_id, get_current_time())
                 self.product_dict[product_id] = new_product
                 self.print_shell(f"New product {product_id} added.")
                 self.update_display_product()
@@ -248,7 +291,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.tbx_product.clear()
         # 遍历整个product_dict，将所有产品信息显示在tbx_product中
         for product in self.product_dict.values():
-            self.tbx_product.append(product.ui_display(self.current_user.user_name))
+            self.tbx_product.append(product.ui_display())
 
     def save_all_product(self):
         save_product(self.product_dict)
