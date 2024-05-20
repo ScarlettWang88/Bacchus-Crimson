@@ -18,9 +18,9 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>410</y>
+      <y>380</y>
       <width>581</width>
-      <height>311</height>
+      <height>341</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -264,7 +264,7 @@ p, li { white-space: pre-wrap; }
      </rect>
     </property>
     <property name="title">
-     <string>GroupBox</string>
+     <string>Product Search</string>
     </property>
     <widget class="QPushButton" name="btn_search">
      <property name="geometry">
@@ -323,8 +323,20 @@ p, li { white-space: pre-wrap; }
      <height>26</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuMeny">
+    <property name="title">
+     <string>Menu</string>
+    </property>
+    <addaction name="actionSetting"/>
+   </widget>
+   <addaction name="menuMeny"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionSetting">
+   <property name="text">
+    <string>Setting</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>

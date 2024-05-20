@@ -31,7 +31,7 @@ def save_users(user_id_dict):
             f.write(str(user) + "\n")
 
 
-def load_product():
+def load_product(user_id_dict):
     if not os.path.exists("DataBase/products.txt"):
         print("No product file found")
         return {}
@@ -42,12 +42,13 @@ def load_product():
                 continue
             product_id, user_id, time_in_stock, time_out_stock, stock_num = line.split(";")
             user_id = user_id.split(":")[1].strip()
+            user = user_id_dict[user_id]
             product_id = product_id.split(":")[1].strip()
             # 这里修改为只split一次，然后取第二个元素，避免出现多个冒号的情况
             time_in_stock = time_in_stock.split(":", 1)[1].strip()
             time_out_stock = time_out_stock.split(":", 1)[1].strip()
             stock_num = int(stock_num.split(":")[1].strip())
-            product = Product(user_id, product_id, time_in_stock, time_out_stock, stock_num)
+            product = Product(user, product_id, time_in_stock, time_out_stock, stock_num)
             product_dict[product_id] = product
     return product_dict
 

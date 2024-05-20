@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file '.\MainPanel.ui'
+# Form implementation generated from reading ui file 'MainPanel.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.7
 #
@@ -98,10 +98,16 @@ class Ui_MainWindow(object):
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 1082, 26))
         self.menubar.setObjectName("menubar")
+        self.menuMeny = QtWidgets.QMenu(self.menubar)
+        self.menuMeny.setObjectName("menuMeny")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
+        self.actionSetting = QtWidgets.QAction(MainWindow)
+        self.actionSetting.setObjectName("actionSetting")
+        self.menuMeny.addAction(self.actionSetting)
+        self.menubar.addAction(self.menuMeny.menuAction())
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
@@ -134,6 +140,8 @@ class Ui_MainWindow(object):
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">In Stock</p></body></html>"))
         self.btn_flip_stock_state.setText(_translate("MainWindow", "Flip State"))
         self.groupBox_3.setTitle(_translate("MainWindow", "Product scaned"))
-        self.groupBox_4.setTitle(_translate("MainWindow", "GroupBox"))
+        self.groupBox_4.setTitle(_translate("MainWindow", "Product Search"))
         self.btn_search.setText(_translate("MainWindow", "Search"))
         self.label.setText(_translate("MainWindow", "ID："))
+        self.menuMeny.setTitle(_translate("MainWindow", "Menu"))
+        self.actionSetting.setText(_translate("MainWindow", "Setting"))
